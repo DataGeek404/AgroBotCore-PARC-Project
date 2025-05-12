@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="maize_field_world">
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Regular maize rows -->
+    <model name="maize_rows">
+      <static>true</static>
+      <link name="link">
+        <!-- 5 rows of 10 maize plants (as cylinders) -->
+        {% for row in range(5) %}
+          {% for col in range(10) %}
+            <visual name="maize_{{row}}_{{col}}">
+              <geometry>
+                <cylinder>
+                  <radius>0.05</radius>
+                  <length>1.0</length>
+                </cylinder>
+              </geometry>
+              <pose>{{ row * 0.5 }}  {{ col * 0.5 }} 0.5  0 0 0</pose>
+              <material>
+                <ambient>0 1 0 1</ambient>
+              </material>
+            </visual>
+          {% endfor %}
+        {% endfor %}
+      </link>
+    </model>
+  </world>
+</sdf>

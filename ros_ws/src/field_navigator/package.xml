@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>field_navigator</name>
+  <version>0.0.1</version>
+  <description>Autonomous navigation node for maize fields</description>
+  <maintainer email="dev@example.com">Dev</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <depend>rclcpp</depend>
+  <depend>geometry_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>sensor_msgs</depend>
+
+  <exec_depend>gazebo_ros</exec_depend>
+</package>
