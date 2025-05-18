@@ -1,0 +1,20 @@
+<!-- urdf/gps_sensor.xacro -->  
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">  
+  <gazebo reference="gps_link">  
+    <sensor name="gps_sensor" type="gps">  
+      <pose>0 0 0.1 0 0 0</pose>  
+      <plugin filename="libgazebo_ros_gps_sensor.so" name="gps_plugin">  
+        <ros>  
+          <namespace>${ns}</namespace>  
+          <remapping>~/out:=gps/fix</remapping>  
+        </ros>  
+        <frame_name>gps_link</frame_name>  
+        <reference_latitude>40.7128</reference_latitude>  <!-- NYC -->  
+        <reference_longitude>-74.0060</reference_longitude>  
+        <reference_altitude>10.0</reference_altitude>  
+        <horizontal_noise>0.3</horizontal_noise>  
+        <vertical_noise>0.5</vertical_noise>  
+      </plugin>  
+    </sensor>  
+  </gazebo>  
+</robot>  

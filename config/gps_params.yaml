@@ -1,0 +1,10 @@
+# config/gps_params.yaml  
+gps_processor:  
+  ros__parameters:  
+    update_rate: 10.0  
+    horizontal_accuracy: 0.5  # meters  
+    vertical_accuracy: 1.0  
+    simulated_fix_type: 3     # 3D fix  
+    covariance: [0.1, 0.0, 0.0,  
+                0.0, 0.1, 0.0,  
+                0.0, 0.0, 0.2]  

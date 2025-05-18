@@ -1,0 +1,3 @@
+<!-- Include GPS Sensor -->  
+<xacro:include filename="$(find agrobot_gps)/urdf/gps_sensor.xacro"/>  
+<xacro:gps_sensor parent="base_link" ns="agrobot"/>  
